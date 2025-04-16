@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      team: prod
+  template:
+    metadata:
+      labels:
+        team: prod
+    spec:
+      containers:
+        - name: "c1"
+          image: "vimal13/apache-webserver-php:v2"
